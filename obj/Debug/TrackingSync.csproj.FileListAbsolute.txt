@@ -2,3 +2,7 @@ C:\Users\cesar\OneDrive\Escritorio\TRABAJO\tracking\TrackinSyncDecompilado\Track
 C:\Users\cesar\OneDrive\Escritorio\TRABAJO\tracking\TrackinSyncDecompilado\TrackingSync\obj\Debug\TrackingSync.csproj.SuggestedBindingRedirects.cache
 C:\Users\cesar\OneDrive\Escritorio\TRABAJO\tracking\TrackinSyncDecompilado\TrackingSync\obj\Debug\TrackingSync.exe.config
 C:\Users\cesar\OneDrive\Escritorio\TRABAJO\tracking\TrackinSyncDecompilado\TrackingSync\obj\Debug\TrackingSync.csproj.CoreCompileInputs.cache
+C:\Users\eblasi\Desktop\Comparacion de servicios\RepoDePruebas\obj\Debug\TrackingSync.csproj.AssemblyReference.cache
+C:\Users\eblasi\Desktop\Comparacion de servicios\RepoDePruebas\obj\Debug\TrackingSync.csproj.SuggestedBindingRedirects.cache
+C:\Users\eblasi\Desktop\Comparacion de servicios\RepoDePruebas\obj\Debug\TrackingSync.exe.config
+C:\Users\eblasi\Desktop\Comparacion de servicios\RepoDePruebas\obj\Debug\TrackingSync.csproj.CoreCompileInputs.cache
