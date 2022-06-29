@@ -1,0 +1,4 @@
+C:\Users\cesar\OneDrive\Escritorio\TRABAJO\tracking\TrackinSyncDecompilado\TrackingSync\obj\Debug\TrackingSync.csproj.AssemblyReference.cache
+C:\Users\cesar\OneDrive\Escritorio\TRABAJO\tracking\TrackinSyncDecompilado\TrackingSync\obj\Debug\TrackingSync.csproj.SuggestedBindingRedirects.cache
+C:\Users\cesar\OneDrive\Escritorio\TRABAJO\tracking\TrackinSyncDecompilado\TrackingSync\obj\Debug\TrackingSync.exe.config
+C:\Users\cesar\OneDrive\Escritorio\TRABAJO\tracking\TrackinSyncDecompilado\TrackingSync\obj\Debug\TrackingSync.csproj.CoreCompileInputs.cache
