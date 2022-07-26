@@ -1,6 +1,7 @@
 ﻿using Andreani.ARQ.Core.Interface;
 using CrudTest.Application.Common.Interfaces;
 using CrudTest.Application.UseCase.CuadroFutbolABM.Create;
+using CrudTest.Application.UseCase.CuadroFutbolABM.Delete;
 using CrudTest.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -21,9 +22,16 @@ namespace CrudTest.Infrastructure.Services.CuadroFutbolService.Commands
         {
             var entity = new CuadroFutbol()
             {
-                Nombre = request.nombre
+                Nombre = request.Nombre
             };
             _repository.Insert(entity);
+            await _repository.SaveChangeAsync();
+            return entity;
+        }
+
+        public async Task<CuadroFutbol> Delete(CuadroFutbol entity)
+        {
+            _repository.Delete(entity);
             await _repository.SaveChangeAsync();
             return entity;
         }

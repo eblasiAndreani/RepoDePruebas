@@ -11,6 +11,6 @@ namespace CrudTest.Application.Common.Interfaces
     {
         Task<bool> GetCuadroFutbol(string column, string nombre);
         Task<CuadroFutbol> GetByIdAsync(string column, string nombre);
-        Task<IEnumerable<CuadroFutbol>> GetAllAsync(string column, string nombre);
+        Task<IEnumerable<CuadroFutbol>> GetAllAsync();
     }
 }

@@ -7,5 +7,6 @@ namespace CrudTest.Application.Common.Interfaces
     public interface ICuadroFutbolServiceCommands
     {
         Task<CuadroFutbol> Create(CuadroFutbolCreateRequest request);
+        Task<CuadroFutbol> Delete(CuadroFutbol entity);
     }
 }

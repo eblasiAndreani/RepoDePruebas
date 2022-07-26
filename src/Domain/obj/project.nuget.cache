@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lsAHL2iN+ybtdaKiSru/h+CIWWYBHnmXIySp0Jw1CFoRiUoa+scWe8Y45RU4oETz2lkO1FWE32jjhurYW83Wlg==",
+  "dgSpecHash": "t5cjnccWqe+2P44bRp5+aeC3oy1WZeZSVsMSlxWbCK1xYRChkp5AdbwMZ0jhAZ9LakkEEFj/UaYrVGgInjLL6g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\eblasi\\Desktop\\Prueba\\WebApi\\src\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\eblasi\\Desktop\\Prueba\\RepoDePruebas\\src\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

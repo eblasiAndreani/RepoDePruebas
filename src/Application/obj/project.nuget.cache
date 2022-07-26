@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "p/QfdrK4JKMiAP4pdUnHXY/3Z1CDK+KXR2XDw50st2rQx/aN6g0TFwDLWi+L4OzggbxBZqwc9PRArhYsCyg58g==",
+  "dgSpecHash": "F5EWbCuQcP1oEaY/i29NSN9csCaT0Cz2Q91ZqNOosDuDSv4hgWiU5izmBGKWD/nNj1+bDNxkzaZ1D2ydZAOC2g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\eblasi\\Desktop\\Prueba\\WebApi\\src\\Application\\Application.csproj",
+  "projectFilePath": "C:\\Users\\eblasi\\Desktop\\Prueba\\RepoDePruebas\\src\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eblasi\\.nuget\\packages\\andreani.arq.core\\6.0.3\\andreani.arq.core.6.0.3.nupkg.sha512",
     "C:\\Users\\eblasi\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",

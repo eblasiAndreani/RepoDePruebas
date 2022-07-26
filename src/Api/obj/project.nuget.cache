@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sN8TsZcHi4I13CtixrSno5Yf9yVG6yz1YCczyz0yYovXDFfO9j3Kqz3pq0fYYHfPZVj7iSsOZXezCDtsEPPkLQ==",
+  "dgSpecHash": "gUilO99xT+pLJJ/EDqnW95NyrezbwXF+yPumPd+b19m46av0fdXJklsiCqpJzrMb+lrlIVbGPdoIdL6BoCvTEA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\eblasi\\Desktop\\Prueba\\WebApi\\src\\Api\\CrudTest.csproj",
+  "projectFilePath": "C:\\Users\\eblasi\\Desktop\\Prueba\\RepoDePruebas\\src\\Api\\CrudTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eblasi\\.nuget\\packages\\andreani.arq.core\\6.0.3\\andreani.arq.core.6.0.3.nupkg.sha512",
     "C:\\Users\\eblasi\\.nuget\\packages\\andreani.arq.cqrs\\6.0.0\\andreani.arq.cqrs.6.0.0.nupkg.sha512",

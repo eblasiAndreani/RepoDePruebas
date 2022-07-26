@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CrudTest.Application.UseCase.CuadroFutbolABM.Update
 {
-    internal class CuadroFutbolUpdateRequest
+    public class CuadroFutbolUpdateRequest
     {
     }
 }
