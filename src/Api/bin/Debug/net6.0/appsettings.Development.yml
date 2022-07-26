@@ -1,0 +1,4 @@
+DataAccessRegistry:
+  ReadOnlyConnection: "Data Source=NB101025;Initial Catalog=CrudTest;Integrated Security=True"
+  TransactionalConnection: "Data Source=NB101025;Initial Catalog=CrudTest;Integrated Security=True"
+  ProviderName: System.Data.SqlClient
