@@ -12,3 +12,17 @@ C:\Users\eblasi\Desktop\Prueba\WebApi\src\Domain\obj\Debug\net6.0\refint\CrudTes
 C:\Users\eblasi\Desktop\Prueba\WebApi\src\Domain\obj\Debug\net6.0\CrudTest.Domain.xml
 C:\Users\eblasi\Desktop\Prueba\WebApi\src\Domain\obj\Debug\net6.0\CrudTest.Domain.pdb
 C:\Users\eblasi\Desktop\Prueba\WebApi\src\Domain\obj\Debug\net6.0\ref\CrudTest.Domain.dll
+C:\Users\eblasi\Desktop\Prueba\RepoDePruebas\src\Domain\bin\Debug\net6.0\CrudTest.Domain.deps.json
+C:\Users\eblasi\Desktop\Prueba\RepoDePruebas\src\Domain\bin\Debug\net6.0\CrudTest.Domain.dll
+C:\Users\eblasi\Desktop\Prueba\RepoDePruebas\src\Domain\bin\Debug\net6.0\CrudTest.Domain.pdb
+C:\Users\eblasi\Desktop\Prueba\RepoDePruebas\src\Domain\bin\Debug\net6.0\CrudTest.Domain.xml
+C:\Users\eblasi\Desktop\Prueba\RepoDePruebas\src\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+C:\Users\eblasi\Desktop\Prueba\RepoDePruebas\src\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eblasi\Desktop\Prueba\RepoDePruebas\src\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+C:\Users\eblasi\Desktop\Prueba\RepoDePruebas\src\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+C:\Users\eblasi\Desktop\Prueba\RepoDePruebas\src\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\eblasi\Desktop\Prueba\RepoDePruebas\src\Domain\obj\Debug\net6.0\CrudTest.Domain.dll
+C:\Users\eblasi\Desktop\Prueba\RepoDePruebas\src\Domain\obj\Debug\net6.0\refint\CrudTest.Domain.dll
+C:\Users\eblasi\Desktop\Prueba\RepoDePruebas\src\Domain\obj\Debug\net6.0\CrudTest.Domain.xml
+C:\Users\eblasi\Desktop\Prueba\RepoDePruebas\src\Domain\obj\Debug\net6.0\CrudTest.Domain.pdb
+C:\Users\eblasi\Desktop\Prueba\RepoDePruebas\src\Domain\obj\Debug\net6.0\ref\CrudTest.Domain.dll

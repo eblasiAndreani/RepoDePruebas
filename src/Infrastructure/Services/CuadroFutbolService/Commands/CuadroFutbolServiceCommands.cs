@@ -35,5 +35,12 @@ namespace CrudTest.Infrastructure.Services.CuadroFutbolService.Commands
             await _repository.SaveChangeAsync();
             return entity;
         }
+
+        public async Task<CuadroFutbol> Update(CuadroFutbol entity)
+        {
+            _repository.Update(entity);
+            await _repository.SaveChangeAsync();
+            return entity;
+        }
     }
 }

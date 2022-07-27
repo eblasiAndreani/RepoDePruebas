@@ -24,7 +24,7 @@ namespace CrudTest.Application.UseCase.CuadroFutbolABM.Create
                 var entity = await Querie.GetByIdAsync("Nombre",request.Nombre);
                 if(entity is null)
                 {
-                    await Command.Create(request);
+                    entity = await Command.Create(request);
                     return new Response<CuadroFutbolCreateResponse>
                     {
                         Content = new CuadroFutbolCreateResponse

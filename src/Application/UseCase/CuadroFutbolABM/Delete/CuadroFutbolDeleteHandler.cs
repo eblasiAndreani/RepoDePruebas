@@ -42,7 +42,7 @@ namespace CrudTest.Application.UseCase.CuadroFutbolABM.Delete
                     {
                         Content = new CuadroFutbolDeleteResponse
                         {
-                            Message = string.Format(ErrorMessage.STORED_RECORD, entity.Nombre),
+                            Message = string.Format(ErrorMessage.NOT_STORED_RECORD, request.Id),
                         },
                         StatusCode = System.Net.HttpStatusCode.NotFound
                     };

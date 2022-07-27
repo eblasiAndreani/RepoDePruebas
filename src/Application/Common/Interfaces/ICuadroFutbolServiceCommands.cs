@@ -8,5 +8,6 @@ namespace CrudTest.Application.Common.Interfaces
     {
         Task<CuadroFutbol> Create(CuadroFutbolCreateRequest request);
         Task<CuadroFutbol> Delete(CuadroFutbol entity);
+        Task<CuadroFutbol> Update(CuadroFutbol entity); 
     }
 }

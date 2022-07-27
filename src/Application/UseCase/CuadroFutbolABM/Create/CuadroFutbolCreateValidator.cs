@@ -16,6 +16,8 @@ namespace CrudTest.Application.UseCase.CuadroFutbolABM.Create
                .MaximumLength(255)
                .WithMessage("Apellido solo puede tener 255 caracteres")
                .NotEqual("River Plate")
+               .WithMessage("No se aceptan club de segunda division")
+               .NotEqual("River")
                .WithMessage("No se aceptan club de segunda division");
         }
     }
