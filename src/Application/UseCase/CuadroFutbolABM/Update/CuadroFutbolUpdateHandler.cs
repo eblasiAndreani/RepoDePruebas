@@ -1,13 +1,14 @@
 ﻿using Andreani.ARQ.Pipeline.Clases;
 using CrudTest.Application.Common.Interfaces;
 using CrudTest.Domain.Common;
+using MediatR;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace CrudTest.Application.UseCase.CuadroFutbolABM.Update
 {
-    public class CuadroFutbolUpdateHandler
+    public class CuadroFutbolUpdateHandler : IRequestHandler<CuadroFutbolUpdateRequest, Response<CuadroFutbolUpdateResponse>>
     {
         private readonly ICuadroFutbolServiceCommands Command;
         private readonly ICuadroFutbolServiceQueries Querie;
@@ -24,7 +25,7 @@ namespace CrudTest.Application.UseCase.CuadroFutbolABM.Update
                 if (entity is not null)
                 {
                     entity.Nombre = request.Nombre;
-                    await Command.Delete(entity);
+                    await Command.Update(entity);
                     return new Response<CuadroFutbolUpdateResponse>
                     {
                         Content = new CuadroFutbolUpdateResponse
