@@ -1,38 +1,64 @@
-﻿using Andreani.ARQ.Core.Interface;
-using Andreani.ARQ.Pipeline.Clases;
+﻿using Andreani.ARQ.Pipeline.Clases;
+using CrudTest.Application.Common.Interfaces;
 using CrudTest.Domain.Common;
-using CrudTest.Domain.Entities;
 using MediatR;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace CrudTest.Application.UseCase.CuadroFutbolABM.Delete
 {
-    public class CuadroFutbolDeleteHandler : IRequestHandler<CuadroFutbolDeleteRequest, Response<string>>
+    public class CuadroFutbolDeleteHandler : IRequestHandler<CuadroFutbolDeleteRequest, Response<CuadroFutbolDeleteResponse>>
     {
-        private readonly ITransactionalRepository _repository;
-        private readonly IReadOnlyQuery _query;
-        public CuadroFutbolDeleteHandler(ITransactionalRepository repository, IReadOnlyQuery query)
+        private readonly ICuadroFutbolServiceCommands Command;
+        private readonly ICuadroFutbolServiceQueries Querie;
+        public CuadroFutbolDeleteHandler(ICuadroFutbolServiceCommands cuadroFutbolServiceCommands, ICuadroFutbolServiceQueries cuadroFutbolServiceQueries)
         {
-            _repository = repository;
-            _query = query;
+            Command = cuadroFutbolServiceCommands;
+            Querie = cuadroFutbolServiceQueries;
         }
-        public async Task<Response<string>> Handle(CuadroFutbolDeleteRequest request, CancellationToken cancellationToken)
+        public async Task<Response<CuadroFutbolDeleteResponse>> Handle(CuadroFutbolDeleteRequest request, CancellationToken cancellationToken)
         {
-            var entity = await _query.GetByIdAsync<CuadroFutbol>("Id", request.Id);
-            var response = new Response<string>();
-            if (entity is null)
+            try
             {
-                response.AddNotification("#3123", nameof(request.Id), string.Format(ErrorMessage.NOT_STORED_RECORD, request.Id));
-                response.StatusCode = System.Net.HttpStatusCode.NotFound;
-                return response;
+                var entity = await Querie.GetByIdAsync("Id", request.Id);
+                if (entity is not null)
+                {
+                    await Command.Delete(entity);
+                    return new Response<CuadroFutbolDeleteResponse>
+                    {
+                        Content = new CuadroFutbolDeleteResponse
+                        {
+                            Message = "Success",
+                            CuadroId = entity.Id,
+                            CuadroNombre = entity.Nombre
+                        },
+                        StatusCode = System.Net.HttpStatusCode.Created
+                    };
+                }
+                else
+                {
+                    return new Response<CuadroFutbolDeleteResponse>
+                    {
+                        Content = new CuadroFutbolDeleteResponse
+                        {
+                            Message = string.Format(ErrorMessage.NOT_STORED_RECORD, request.Id),
+                        },
+                        StatusCode = System.Net.HttpStatusCode.NotFound
+                    };
+                }
             }
-            _repository.Delete(entity);
-            await _repository.SaveChangeAsync();
-            response.Content = request.Id;
-            response.StatusCode = System.Net.HttpStatusCode.OK;
-            return response;
+            catch (Exception e)
+            {
+                return new Response<CuadroFutbolDeleteResponse>
+                {
+                    Content = new CuadroFutbolDeleteResponse
+                    {
+                        Message = e.ToString()
+                    },
+                    StatusCode = System.Net.HttpStatusCode.BadRequest
+                };
+            }
         }
     }
 }
-

@@ -10,6 +10,6 @@ namespace CrudTest.Application.UseCase.CuadroFutbolABM.Create
 {
     public class CuadroFutbolCreateRequest : IRequest<Response<CuadroFutbolCreateResponse>>
     {
-        public string nombre { get; set; }
+        public string Nombre { get; set; }
     }
 }

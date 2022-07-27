@@ -4,6 +4,7 @@ using CrudTest.Application.UseCase.CuadroFutbolABM.Create;
 using CrudTest.Application.UseCase.CuadroFutbolABM.Delete;
 using CrudTest.Application.UseCase.CuadroFutbolABM.Get;
 using CrudTest.Application.UseCase.CuadroFutbolABM.GetById;
+using CrudTest.Application.UseCase.CuadroFutbolABM.Update;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -35,6 +36,11 @@ namespace CrudTest.Controllers
         [ProducesResponseType(typeof(CuadroFutbolGetByIdResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(List<Notify>), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> GetById(string id) => Result(await Mediator.Send(new CuadroFutbolGetByIdRequest() { Id = id }));
+
+        //[HttpPut("{id}")]
+        //[ProducesResponseType(typeof(CuadroFutbolUpdateResponse), StatusCodes.Status200OK)]
+        //[ProducesResponseType(typeof(List<Notify>), StatusCodes.Status400BadRequest)]
+        //public async Task<IActionResult> Update(string id) => Result(await Mediator.Send(new CuadroFutbolUpdateRequest() { }));
 
     }
 }

@@ -1,6 +1,8 @@
 ﻿using Andreani.ARQ.Pipeline.Clases;
 using CrudTest.Application.Common.Interfaces;
+using CrudTest.Domain.Common;
 using MediatR;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -8,24 +10,55 @@ namespace CrudTest.Application.UseCase.CuadroFutbolABM.Create
 {
     public class CuadroFutbolCreateHandler : IRequestHandler<CuadroFutbolCreateRequest, Response<CuadroFutbolCreateResponse>>
     {
-        private readonly ICuadroFutbolServiceCommands cuadroFutbolServiceCommands;
-        public CuadroFutbolCreateHandler(ICuadroFutbolServiceCommands _cuadroFutbolServiceCommands)
+        private readonly ICuadroFutbolServiceCommands Command;
+        private readonly ICuadroFutbolServiceQueries Querie;
+        public CuadroFutbolCreateHandler(ICuadroFutbolServiceCommands cuadroFutbolServiceCommands, ICuadroFutbolServiceQueries cuadroFutbolServiceQueries)
         {
-            cuadroFutbolServiceCommands = _cuadroFutbolServiceCommands;
+            Command = cuadroFutbolServiceCommands;
+            Querie = cuadroFutbolServiceQueries;
         }
-        public Task<Response<CuadroFutbolCreateResponse>> Handle(CuadroFutbolCreateRequest request, CancellationToken cancellationToken)
+        public async Task<Response<CuadroFutbolCreateResponse>> Handle(CuadroFutbolCreateRequest request, CancellationToken cancellationToken)
         {
-            var entity = cuadroFutbolServiceCommands.Create(request);
-            return Task.FromResult(new Response<CuadroFutbolCreateResponse>
+            try
             {
-                Content = new CuadroFutbolCreateResponse
+                var entity = await Querie.GetByIdAsync("Nombre",request.Nombre);
+                if(entity is null)
                 {
-                    Message = "Success",
-                    CuadroId = entity.Id,
-                    CuadroNombre = request.nombre
-                },
-                StatusCode = System.Net.HttpStatusCode.Created
-            });
+                    entity = await Command.Create(request);
+                    return new Response<CuadroFutbolCreateResponse>
+                    {
+                        Content = new CuadroFutbolCreateResponse
+                        {
+                            Message = "Success",
+                            CuadroId = entity.Id,
+                            CuadroNombre = entity.Nombre
+                        },
+                        StatusCode = System.Net.HttpStatusCode.Created
+                    };
+                }
+                else
+                {
+                    return new Response<CuadroFutbolCreateResponse>
+                    {
+                        Content = new CuadroFutbolCreateResponse
+                        {
+                            Message = string.Format(ErrorMessage.STORED_RECORD, request.Nombre),
+                        },
+                        StatusCode = System.Net.HttpStatusCode.NotFound
+                    };
+                }
+            }
+            catch (Exception e)
+            {
+                return new Response<CuadroFutbolCreateResponse>
+                {
+                    Content = new CuadroFutbolCreateResponse
+                    {
+                        Message = e.ToString()
+                    },
+                    StatusCode = System.Net.HttpStatusCode.BadRequest
+                };
+            }
         }
     }
 }

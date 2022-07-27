@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace CrudTest.Application.UseCase.CuadroFutbolABM.Update
 {
-    internal class CuadroFutbolUpdateResponse
+    public class CuadroFutbolUpdateResponse
     {
+        public string Message { get; set; }
+        public int CuadroId { get; set; }
+        public string CuadroNombre { get; set; }
     }
 }

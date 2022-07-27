@@ -26,7 +26,7 @@ namespace CrudTest.Infrastructure.Services.CuadroFutbolService.Queries
             return entity;
         }
 
-        public async Task<IEnumerable<CuadroFutbol>> GetAllAsync(string column, string nombre)
+        public async Task<IEnumerable<CuadroFutbol>> GetAllAsync()
         {
             var list = await query.GetAllAsync<CuadroFutbol>();
             return list;

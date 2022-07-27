@@ -13,12 +13,12 @@ namespace CrudTest.Application.UseCase.CuadroFutbolABM.GetById
     {
         public CuadroFutbolGetByIdValidator()
         {
-            //RuleFor(x => x.Id)
-            //   .Cascade(CascadeMode.Stop)
-            //   .NotEmpty()
-            //   .WithMessage("El id no puede estar vacio")
-            //   .Must(x => int.TryParse(x, out int _))
-            //   .WithMessage("No es un numero");
+            RuleFor(x => x.Id)
+               .Cascade(CascadeMode.Stop)
+               .NotEmpty()
+               .WithMessage("El id no puede estar vacio")
+               .Must(x => int.TryParse(x, out int _))
+               .WithMessage("No es un numero");
         }
     }
 }

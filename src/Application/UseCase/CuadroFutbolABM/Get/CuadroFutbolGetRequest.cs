@@ -8,7 +8,5 @@ using System.Threading.Tasks;
 
 namespace CrudTest.Application.UseCase.CuadroFutbolABM.Get
 {
-    public class CuadroFutbolGetRequest : IRequest<Response<CuadroFutbolGetResponse>>
-    {
-    }
+    public class CuadroFutbolGetRequest : IRequest<Response<CuadroFutbolGetResponse>> {  }
 }

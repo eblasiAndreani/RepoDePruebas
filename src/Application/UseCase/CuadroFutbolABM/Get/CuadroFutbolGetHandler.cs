@@ -1,9 +1,9 @@
-﻿using Andreani.ARQ.Core.Interface;
-using Andreani.ARQ.Pipeline.Clases;
+﻿using Andreani.ARQ.Pipeline.Clases;
+using CrudTest.Application.Common.Interfaces;
 using CrudTest.Domain.Common;
 using CrudTest.Domain.Dtos;
-using CrudTest.Domain.Entities;
 using MediatR;
+using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,26 +12,53 @@ namespace CrudTest.Application.UseCase.CuadroFutbolABM.Get
 {
     public class CuadroFutbolGetHandler : IRequestHandler<CuadroFutbolGetRequest, Response<CuadroFutbolGetResponse>>
     {
-        private readonly IReadOnlyQuery _query;
-        public CuadroFutbolGetHandler(IReadOnlyQuery query)
+        private readonly ICuadroFutbolServiceCommands Command;
+        private readonly ICuadroFutbolServiceQueries Querie;
+        public CuadroFutbolGetHandler(ICuadroFutbolServiceCommands cuadroFutbolServiceCommands, ICuadroFutbolServiceQueries cuadroFutbolServiceQueries)
         {
-            _query = query;
+            Command = cuadroFutbolServiceCommands;
+            Querie = cuadroFutbolServiceQueries;
         }
         public async Task<Response<CuadroFutbolGetResponse>> Handle(CuadroFutbolGetRequest request, CancellationToken cancellationToken)
         {
-            var list = await _query.GetAllAsync<CuadroFutbol>();
-            var response = new Response<CuadroFutbolGetResponse>();
-            if (list is null)
+            try
             {
-                response.Content = new CuadroFutbolGetResponse(){ Message = ErrorMessage.NONEXISTENT_RECORDS };
-                response.StatusCode = System.Net.HttpStatusCode.NotFound;
-                return response;
+                var list = await Querie.GetAllAsync();
+                if (list is not null)
+                {
+                    return new Response<CuadroFutbolGetResponse>
+                    {
+                        Content = new CuadroFutbolGetResponse
+                        {
+                            Message = "Success",
+                            Lista = list.Select(q => new CuadroFutbolDTO { Id = q.Id, Nombre = q.Nombre }).ToList()
+                        },
+                        StatusCode = System.Net.HttpStatusCode.OK
+                    };
+                }
+                else
+                {
+                    return new Response<CuadroFutbolGetResponse>
+                    {
+                        Content = new CuadroFutbolGetResponse
+                        {
+                            Message = ErrorMessage.NONEXISTENT_RECORDS,
+                        },
+                        StatusCode = System.Net.HttpStatusCode.NotFound
+                    };
+                }
             }
-
-            response.Content = new CuadroFutbolGetResponse() { Message = "Ok", Lista = list.Select(q => new CuadroFutbolDTO { Id = q.Id , Nombre=q.Nombre }).ToList() };
-            response.StatusCode = System.Net.HttpStatusCode.OK;
-            return response;
+            catch (Exception e)
+            {
+                return new Response<CuadroFutbolGetResponse>
+                {
+                    Content = new CuadroFutbolGetResponse
+                    {
+                        Message = e.ToString()
+                    },
+                    StatusCode = System.Net.HttpStatusCode.BadRequest
+                };
+            }
         }
     }
 }
-
