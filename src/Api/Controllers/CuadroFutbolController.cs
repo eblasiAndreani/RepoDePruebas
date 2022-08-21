@@ -6,6 +6,7 @@ using CrudTest.Application.UseCase.CuadroFutbolABM.Get;
 using CrudTest.Application.UseCase.CuadroFutbolABM.GetById;
 using CrudTest.Application.UseCase.CuadroFutbolABM.Update;
 using CrudTest.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ using System.Threading.Tasks;
 namespace CrudTest.Controllers
 {
     [ApiController]
+    [Authorize]
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
     public class CuadroFutbolController : ApiControllerBase

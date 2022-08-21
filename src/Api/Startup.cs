@@ -39,7 +39,8 @@ public class Startup
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider provider)
     {
         app.UseCors();
-
+        app.UseAuthentication();
+        app.UseAuthorization();
         app.ConfigureAndreani(env, provider);
     }
 }
